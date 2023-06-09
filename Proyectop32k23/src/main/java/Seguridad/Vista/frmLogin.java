@@ -141,21 +141,21 @@ public class frmLogin extends javax.swing.JFrame {
             try {
                 clsUsuario usuario = new clsUsuario();
           
-                usuario.setNombreUsuario(txtUsuario.getText().trim());
+                usuario.setUSUARIO_NOMBRE(txtUsuario.getText().trim());
                 // Recuperación de información a través de otro objeto
                 // se agrego codificacion de seguridad = David Rojas
                 clsSeguridad c = new clsSeguridad();
-                usuario.setContrasenaUsuario(c.encode(txtContraseña.getText()));
+                usuario.setPASSWORD(c.encode(txtContraseña.getText()));
                 
                 usuario = usuario.getBuscarInformacionUsuarioPorNombre(usuario);
-                if (c.encode(pass).equals(usuario.getContrasenaUsuario()) && 
-                    txtUsuario.getText().equals(usuario.getNombreUsuario())) {
+                if (c.encode(pass).equals(usuario.getPASSWORD()) && 
+                    txtUsuario.getText().equals(usuario.getUSUARIO_NOMBRE())) {
                     JOptionPane.showMessageDialog(null, "Bienvenido al SISTEMA\n", 
                     "Mensaje de bienvenida", JOptionPane.INFORMATION_MESSAGE);
                     // registrando usuario conectado
                     clsUsuarioConectado usuarioRegistrado = new clsUsuarioConectado();
-                    usuarioRegistrado.setIdUsuario(usuario.getIdUsuario());
-                    usuarioRegistrado.setNombreUsuario(usuario.getNombreUsuario());
+                    usuarioRegistrado.setIdUsuario(usuario.getID_USUARIO());
+                    usuarioRegistrado.setNombreUsuario(usuario.getUSUARIO_NOMBRE());
                     // Registro de Bitacora
                     int resultadoBitacora=0;
                     clsBitacora bitacoraRegistro = new clsBitacora();
