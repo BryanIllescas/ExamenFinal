@@ -5,7 +5,6 @@
  */
 package Seguridad.Vista;
 
-import Inventarios.Vista.MdiInventario;
 import Seguridad.Controlador.clsUsuario;
 import java.awt.HeadlessException;
 
@@ -13,9 +12,6 @@ import javax.swing.JOptionPane;
 import Seguridad.Controlador.clsUsuarioConectado;
 import Seguridad.Controlador.clsBitacora;
 import Seguridad.Controlador.clsSeguridad;
-import Ventas.Vista.MdiVentas;
-import Bancos.Vista.MdiBancos;
-import Compras.Vista.MdiCompras;
 /**
  *
  * @author visitante
@@ -50,8 +46,6 @@ public class frmLogin extends javax.swing.JFrame {
         btnAceptar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         txtContraseña = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
-        cboOpciones = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,17 +77,6 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Departamento");
-
-
-        cboOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bancos", "Compras", "Cuentas Corrientes", "Inventarios", "Seguridad", "Ventas" }));
-        cboOpciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboOpcionesActionPerformed(evt);
-            }
-        });
-
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,17 +89,11 @@ public class frmLogin extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(28, 28, 28)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addGap(18, 18, 18))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jLabel4)
-                                    .addGap(2, 2, 2)))
+                            .addGap(28, 28, 28)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(btnAceptar)
@@ -124,9 +101,7 @@ public class frmLogin extends javax.swing.JFrame {
                                     .addComponent(jButton2))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(27, 27, 27)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cboOpciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -142,11 +117,7 @@ public class frmLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(cboOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
                     .addComponent(jButton2))
@@ -190,74 +161,9 @@ public class frmLogin extends javax.swing.JFrame {
                     clsBitacora bitacoraRegistro = new clsBitacora();
                     resultadoBitacora = bitacoraRegistro.setIngresarBitacora(usuarioRegistrado.getIdUsuario(), codigoAplicacion, "BEG");
                     // Menu general---
-                    /*MdiSeguridad menuGeneral = new MdiSeguridad();
+                    MdiSeguridad menuGeneral = new MdiSeguridad();
                     menuGeneral.setVisible(true);
-                    this.dispose();*/
-                    
-                    //---Agregando switch case para funcionalidad de todos los módulos(incompleto porque aún no hay MDI'S de todos)
-                    //Victor Jerez
-                    String areaSeleccionada;
-                    areaSeleccionada = cboOpciones.getSelectedItem().toString();
-                    
-                    switch (areaSeleccionada) {
-
-                        case "Bancos":
-                        try {
-                            MdiBancos menu = new MdiBancos();
-                            menu.setVisible(true);
-                            this.dispose();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }   
-                        break;
-                        case "Compras":
-                        try {
-                            MdiCompras menu = new MdiCompras();
-                            menu.setVisible(true);
-                            this.dispose();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }   
-                        break;
-                        case "Cuentas Corrientes":
-                        try {
-                            MdiSeguridad menu = new MdiSeguridad();
-                            menu.setVisible(true);
-                            this.dispose();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }   
-                        break;
-                        case "Inventarios":
-                        try {
-                            MdiInventario menu = new MdiInventario();
-                            menu.setVisible(true);
-                            this.dispose();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }   
-                        break;
-                        case "Seguridad":
-                        try {
-                            MdiSeguridad menu = new MdiSeguridad();
-                            menu.setVisible(true);
-                            this.dispose();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }   
-                        break;
-                        case "Ventas":
-                        try {
-                            MdiVentas menu = new MdiVentas();
-                            menu.setVisible(true);
-                            this.dispose();
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }   
-                        break;
-                        default:
-                            break;
-                    }
+                    this.dispose();
 
                 } else {
                     JOptionPane.showMessageDialog(this, "ERROR AL ENCONTRAR USUARIO o CONTRASEÑA",                              "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -277,10 +183,6 @@ public class frmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void cboOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboOpcionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboOpcionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,12 +224,10 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
-    private javax.swing.JComboBox<String> cboOpciones;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
