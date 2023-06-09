@@ -46,12 +46,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
         mnuCatalogos = new javax.swing.JMenu();
         mnuCatalogosMantenimientos = new javax.swing.JMenu();
         mantenimientoUsuarios = new javax.swing.JMenuItem();
-        mantenimientoPerfiles = new javax.swing.JCheckBoxMenuItem();
-        mantenimientoTipoUsuarios = new javax.swing.JCheckBoxMenuItem();
         mnuProcesos = new javax.swing.JMenu();
-        aplicacionesUsuarios = new javax.swing.JMenuItem();
-        menuperfilUsuario = new javax.swing.JCheckBoxMenuItem();
-        mIAplicacionPerfil = new javax.swing.JMenuItem();
         mnuConsultas = new javax.swing.JMenu();
         consultaBitacora = new javax.swing.JCheckBoxMenuItem();
         mnuReportes = new javax.swing.JMenu();
@@ -116,24 +111,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
         });
         mnuCatalogosMantenimientos.add(mantenimientoUsuarios);
 
-        mantenimientoPerfiles.setSelected(true);
-        mantenimientoPerfiles.setText("Mantenimiento Perfiles");
-        mantenimientoPerfiles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoPerfilesActionPerformed(evt);
-            }
-        });
-        mnuCatalogosMantenimientos.add(mantenimientoPerfiles);
-
-        mantenimientoTipoUsuarios.setSelected(true);
-        mantenimientoTipoUsuarios.setText("Mantenimiento Tipo de Usuarios");
-        mantenimientoTipoUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoTipoUsuariosActionPerformed(evt);
-            }
-        });
-        mnuCatalogosMantenimientos.add(mantenimientoTipoUsuarios);
-
         mnuCatalogos.add(mnuCatalogosMantenimientos);
 
         mnuGeneral.add(mnuCatalogos);
@@ -144,32 +121,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
                 mnuProcesosActionPerformed(evt);
             }
         });
-
-        aplicacionesUsuarios.setText("Aplicaciones Usuarios");
-        aplicacionesUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aplicacionesUsuariosActionPerformed(evt);
-            }
-        });
-        mnuProcesos.add(aplicacionesUsuarios);
-
-        menuperfilUsuario.setSelected(true);
-        menuperfilUsuario.setText("Perfil Usuario");
-        menuperfilUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuperfilUsuarioActionPerformed(evt);
-            }
-        });
-        mnuProcesos.add(menuperfilUsuario);
-
-        mIAplicacionPerfil.setText("Aplicacion Perfil");
-        mIAplicacionPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mIAplicacionPerfilActionPerformed(evt);
-            }
-        });
-        mnuProcesos.add(mIAplicacionPerfil);
-
         mnuGeneral.add(mnuProcesos);
 
         mnuConsultas.setText("Consultas");
@@ -243,20 +194,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_mnuSalirSistemaActionPerformed
 
-    private void mantenimientoPerfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoPerfilesActionPerformed
-        // TODO add your handling code here:
-               
-    }//GEN-LAST:event_mantenimientoPerfilesActionPerformed
-
-    private void mantenimientoTipoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoTipoUsuariosActionPerformed
-        // TODO add your handling code here:
-        frmMantenimientoTipoUsuario ventana = new frmMantenimientoTipoUsuario();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-    }//GEN-LAST:event_mantenimientoTipoUsuariosActionPerformed
-
     private void mnuConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuConsultasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnuConsultasActionPerformed
@@ -269,25 +206,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
     }//GEN-LAST:event_consultaBitacoraActionPerformed
-
-    private void aplicacionesUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicacionesUsuariosActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_aplicacionesUsuariosActionPerformed
-
-    private void menuperfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuperfilUsuarioActionPerformed
-        // TODO add your handling code here:
-         frmMantenimientoPerfilUsuario ventana = new frmMantenimientoPerfilUsuario();
-        jDesktopPane1.add(ventana);
-        Dimension desktopSize = jDesktopPane1.getSize();
-        Dimension FrameSize = ventana.getSize();
-        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-    }//GEN-LAST:event_menuperfilUsuarioActionPerformed
-
-    private void mIAplicacionPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIAplicacionPerfilActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_mIAplicacionPerfilActionPerformed
 
     private void mnuProcesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesosActionPerformed
         // TODO add your handling code here:
@@ -332,7 +250,6 @@ public class MdiSeguridad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aplicacionesUsuarios;
     private javax.swing.JCheckBoxMenuItem consultaBitacora;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -340,11 +257,7 @@ public class MdiSeguridad extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem mIAplicacionPerfil;
-    private javax.swing.JCheckBoxMenuItem mantenimientoPerfiles;
-    private javax.swing.JCheckBoxMenuItem mantenimientoTipoUsuarios;
     private javax.swing.JMenuItem mantenimientoUsuarios;
-    private javax.swing.JCheckBoxMenuItem menuperfilUsuario;
     private javax.swing.JMenu mnuArchivo;
     private javax.swing.JMenu mnuAyudas;
     private javax.swing.JMenu mnuCatalogos;
